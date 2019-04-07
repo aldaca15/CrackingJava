@@ -31,27 +31,29 @@ public class SelectionSort {
     
     public SelectionSort(int[] unsortedArray) {
         super();
-        sort(unsortedArray);
-    }
-    
-    /**
-    * This method considers a first implementation of selectionSort algorithm
-    * @author Ali Adame
-    * @param unsortedArray integers array
-    */
-    public int[] sort(int[] unsortedArray) {
-        int lastUnsortedElement = unsortedArray.length - 1;
-        while(lastUnsortedElement > 0) {
-            for(int i = 0; i < lastUnsortedElement; i++) {
-                performSwap(i, lastUnsortedElement, unsortedArray);
-            }
-            lastUnsortedElement--;
-        }
-        System.out.println("SelectionSorted output: ");
+        improvedSort(unsortedArray);
+        System.out.println("Selection Sorted output: ");
         for (int i = 0; i < unsortedArray.length; i++) {
             System.out.println(unsortedArray[i]);
         }
-        return unsortedArray;
+    }
+    
+    /**
+     * Improved version of Selection sort created by Sarah Ettritch
+     * @see For more information: https://www.udemy.com/data-structures-and-algorithms-deep-dive-using-java/
+     * @param array containing elements to sort
+     */
+    public void improvedSort(int[] array) {
+        for(int lastUnsortedIndex = array.length -1; lastUnsortedIndex > 0; 
+                lastUnsortedIndex --) {
+            int largest = 0;
+            for (int i = 0; i <= lastUnsortedIndex; i++) {
+                if(array[i] > array[largest]) {
+                    largest = i;
+                }
+            }
+            swap(array, lastUnsortedIndex, largest);
+        }
     }
     
     /**
@@ -60,12 +62,15 @@ public class SelectionSort {
      * @param yPosition of the other candidate for swapping
      * @param unsortedArray that may content changes 
      */
-    public void performSwap(int xPosition, int yPosition, int[] unsortedArray) {
-        if(unsortedArray[xPosition] > unsortedArray[yPosition]) {
-            int tempo = unsortedArray[xPosition];
-            unsortedArray[yPosition] = unsortedArray[xPosition];
-            unsortedArray[yPosition] = tempo;
+    public void swap(int[] unsortedArray, int xPosition, int yPosition) {
+        
+        if(xPosition == yPosition) {
+            return;
         }
+        
+        int temp = unsortedArray[xPosition];
+        unsortedArray[xPosition] = unsortedArray[yPosition];
+        unsortedArray[yPosition] = temp;
     }
     
 }

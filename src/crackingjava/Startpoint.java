@@ -36,7 +36,7 @@ public class Startpoint {
         //ReadConsole stdIn = new ReadConsole(); // Just uncomment it if you need to use the console
         
         int arrayToSort[] = new int[]{ 14, 8, 65, 4, 32, 1, 6, 19 };
-        BubbleSort bsAlg = new BubbleSort(arrayToSort);
+        //BubbleSort bsAlg = new BubbleSort(arrayToSort);
         SelectionSort ssAlg = new SelectionSort(arrayToSort);
         
     }

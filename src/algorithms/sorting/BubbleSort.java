@@ -36,7 +36,13 @@ public class BubbleSort {
     */
     public BubbleSort(int[] unsortedArray) {
         super();
-        sort(unsortedArray);
+        //sort(unsortedArray);
+        improvedSort(unsortedArray);
+        
+        System.out.println("BubbleSorted output ");
+        for (int i = 0; i < unsortedArray.length; i++) {
+            System.out.println(unsortedArray[i]);
+        }
     }
     
     public int[] sort(int[] unsortedArray) {        
@@ -53,10 +59,30 @@ public class BubbleSort {
             }
             indexOrderPointer++;
         }
-        System.out.println("BubbleSorted output ");
-        for (int i = 0; i < unsortedArray.length; i++) {
-            System.out.println(unsortedArray[i]);
-        }
+        
         return unsortedArray;
+    }
+    
+    /**
+     * Improved version of Bubble sort created by Sarah Ettritch
+     * @see For more information: https://www.udemy.com/data-structures-and-algorithms-deep-dive-using-java/
+     * @param array containing elements to sort
+     */
+    public void improvedSort(int[] array) {
+        for(int lastUnsortedIndex = array.length - 1; lastUnsortedIndex > 0;
+                lastUnsortedIndex--) {
+            for (int i = 0; i > lastUnsortedIndex; i++) {
+                swap(array, i, i+1);
+            }
+        }
+    }
+    
+    public void swap(int[] array, int i, int j) {
+        if(i == j) {
+            return;
+        }
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
 }
