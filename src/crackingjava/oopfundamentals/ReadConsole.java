@@ -44,6 +44,7 @@ public class ReadConsole {
             int currentVal = sc.nextInt();
             sum += currentVal;
         }
+        // In future implmentation it is important to consider the efects of using nextLine() after any neXXXt() elememt
         
         System.out.println("Sum of al given values is " + sum);
     }
