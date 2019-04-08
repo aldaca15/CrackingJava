@@ -9,6 +9,7 @@ import crackingjava.oopfundamentals.Inheritance;
 import crackingjava.oopfundamentals.IntegerPointers;
 import crackingjava.oopfundamentals.ReadConsole;
 import algorithms.sorting.BubbleSort;
+import algorithms.sorting.InsertionSort;
 import algorithms.sorting.SelectionSort;
 
 /**
@@ -35,9 +36,12 @@ public class Startpoint {
         
         //ReadConsole stdIn = new ReadConsole(); // Just uncomment it if you need to use the console
         
-        int arrayToSort[] = new int[]{ 14, 8, 65, 4, 32, 1, 6, 19 };
+        int arrayToSort[] = new int[]{69,65,95,3,5,4,15,32};
         //BubbleSort bsAlg = new BubbleSort(arrayToSort);
-        SelectionSort ssAlg = new SelectionSort(arrayToSort);
+        //SelectionSort ssAlg = new SelectionSort(arrayToSort);
+        InsertionSort isAlg = new InsertionSort(arrayToSort);
+        
+        //BinarySearch binSearchAlg = new BinarySearch(arrayToSort, 32);
         
     }
     

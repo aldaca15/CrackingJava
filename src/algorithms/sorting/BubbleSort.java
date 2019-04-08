@@ -68,13 +68,14 @@ public class BubbleSort {
      * @see For more information: https://www.udemy.com/data-structures-and-algorithms-deep-dive-using-java/
      * @param array containing elements to sort
      */
-    public void improvedSort(int[] array) {
+    public int[] improvedSort(int[] array) {
         for(int lastUnsortedIndex = array.length - 1; lastUnsortedIndex > 0;
                 lastUnsortedIndex--) {
             for (int i = 0; i > lastUnsortedIndex; i++) {
                 swap(array, i, i+1);
             }
         }
+        return array;
     }
     
     public void swap(int[] array, int i, int j) {
