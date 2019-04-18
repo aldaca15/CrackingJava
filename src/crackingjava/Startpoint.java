@@ -11,6 +11,7 @@ import crackingjava.oopfundamentals.ReadConsole;
 import algorithms.sorting.BubbleSort;
 import algorithms.sorting.InsertionSort;
 import algorithms.sorting.SelectionSort;
+import java8.StreamObj;
 
 /**
  * This class is intended to run the examples of the different subjects.
@@ -41,7 +42,12 @@ public class Startpoint {
         //SelectionSort ssAlg = new SelectionSort(arrayToSort);
         InsertionSort isAlg = new InsertionSort(arrayToSort);
         
-        //BinarySearch binSearchAlg = new BinarySearch(arrayToSort, 32);
+        int a = 120;
+        System.out.println(a>>1);
+        
+        //BinarySearch binSearchAlg = new BinarySearch(arrayToSort, 32); // Coming soon
+        
+        new StreamObj(new String[]{ "First", "Second", "Third" }); // A class to play with Java8 streams
         
     }
     
