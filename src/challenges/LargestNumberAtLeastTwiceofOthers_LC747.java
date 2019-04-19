@@ -41,15 +41,6 @@ public class LargestNumberAtLeastTwiceofOthers_LC747 {
         System.out.println("Largest index must returns: " + largest);
     }
     
-    public static void main(String[] args) {
-        
-        new LargestNumberAtLeastTwiceofOthers_LC747(new int[] {3, 6, 1, 0});
-        
-        new LargestNumberAtLeastTwiceofOthers_LC747(new int[] {1, 2, 3, 4});
-        
-        new LargestNumberAtLeastTwiceofOthers_LC747(new int[] {0, 0, 0, 1});
-    }
-    
     /**
      * Find the dominant index of a given array
      * @param nums

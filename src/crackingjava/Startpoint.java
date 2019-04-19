@@ -4,6 +4,7 @@
  */
 package crackingjava;
 
+import abstractdatatypes.SinglyLinkedListImproved;
 import crackingjava.oopfundamentals.BitwiseOperators;
 import crackingjava.oopfundamentals.Inheritance;
 import crackingjava.oopfundamentals.IntegerPointers;
@@ -48,9 +49,14 @@ public class Startpoint {
         
         //BinarySearch binSearchAlg = new BinarySearch(arrayToSort, 32); // Coming soon
         
+        // Example of how to use Streams in java
         //new StreamObj(new String[]{ "First", "Second", "Third" }); // A class to play with Java8 streams
         
-        ParallelStream parallelStream = new ParallelStream(new Integer[]{1,2,3,4,5,6,7,8,9,10});
+        // A call to a sum using parallel streams in java
+        //ParallelStream parallelStream = new ParallelStream(new Integer[]{1,2,3,4,5,6,7,8,9,10});
+        
+        // A singly linked list call
+        SinglyLinkedListImproved slli = new SinglyLinkedListImproved();
         
     }
     
