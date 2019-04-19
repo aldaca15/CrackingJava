@@ -21,35 +21,41 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package crackingjava.oopfundamentals;
+package java8;
 
-import java.util.Scanner;
+import java.util.Arrays;
+import java.util.List;
 
 /**
- * This class was created with the purpose of show how to read data from console
+ * This class shows how using a parallel stream it is possible to accelerate operations of different kind in streams
  * @author Ali Adame
  */
-public class ReadConsole {
+public class ParallelStream {
     
-    public ReadConsole() {
-        super();
-        performConsoleRead();
+    public static void main(String[] args) {
+        ParallelStream parallelStream = new ParallelStream(new Integer[]{1,2,3,4,5,6,7,8,9,10});
+    }
+    
+    public ParallelStream(Integer[] intArr) {
+        List<Integer> li = Arrays.asList(intArr);
+        System.out.println("Sum:" + sumWithParallelStream(li));
     }
     
     /**
-    * This method will process data from console to perform a sum of a signed value
-    * @author Ali Adame
-    */
-    public void performConsoleRead() {
-        Scanner sc = new Scanner(System.in);
-        int sum = 0;
-        while(sc.hasNextInt()) {
-            int currentVal = sc.nextInt();
-            sum += currentVal;
-        }
-        // In future implmentation it is important to consider the efects of using nextLine() after any neXXXt() elememt
-        
-        System.out.println("Sum of al given values is " + sum);
+     * Performs sum from data USING parallel computing if no delimiters are added
+     * @param intArr an Integer Array
+     */
+    public int sumWithParallelStream(List<Integer> li) {
+        return li.parallelStream().peek(System.out::println).reduce(0, (a,b) -> a+b);
+                
+    }
+    
+    /**
+     * Performs sum from data WITHOUT parallel computing
+     * @param intArr an Integer Array
+     */
+    public int sumWithoutParallelStream(List<Integer> li) {
+        return li.stream().peek(System.out::println).reduce(0, (a,b) -> a+b);
     }
     
 }

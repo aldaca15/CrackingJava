@@ -11,6 +11,7 @@ import crackingjava.oopfundamentals.ReadConsole;
 import algorithms.sorting.BubbleSort;
 import algorithms.sorting.InsertionSort;
 import algorithms.sorting.SelectionSort;
+import java8.ParallelStream;
 import java8.StreamObj;
 
 /**
@@ -47,7 +48,9 @@ public class Startpoint {
         
         //BinarySearch binSearchAlg = new BinarySearch(arrayToSort, 32); // Coming soon
         
-        new StreamObj(new String[]{ "First", "Second", "Third" }); // A class to play with Java8 streams
+        //new StreamObj(new String[]{ "First", "Second", "Third" }); // A class to play with Java8 streams
+        
+        ParallelStream parallelStream = new ParallelStream(new Integer[]{1,2,3,4,5,6,7,8,9,10});
         
     }
     

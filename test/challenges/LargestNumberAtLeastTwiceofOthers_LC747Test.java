@@ -21,35 +21,30 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package crackingjava.oopfundamentals;
+package challenges;
 
-import java.util.Scanner;
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
- * This class was created with the purpose of show how to read data from console
+ * Test class for: LargestNumberAtLeastTwiceofOthers_LC747
+ * In a given integer array nums, there is always exactly one largest element. 
+ * Find whether the largest element in the array is at least twice as much as every other number in the array.
+ * If it is, return the index of the largest element, otherwise return -1.
  * @author Ali Adame
+ * @see LeetCode challenge 747: {@link https://leetcode.com/articles/largest-number-at-least-twice-of-others}
  */
-public class ReadConsole {
+public class LargestNumberAtLeastTwiceofOthers_LC747Test {
     
-    public ReadConsole() {
-        super();
-        performConsoleRead();
-    }
-    
-    /**
-    * This method will process data from console to perform a sum of a signed value
-    * @author Ali Adame
-    */
-    public void performConsoleRead() {
-        Scanner sc = new Scanner(System.in);
-        int sum = 0;
-        while(sc.hasNextInt()) {
-            int currentVal = sc.nextInt();
-            sum += currentVal;
-        }
-        // In future implmentation it is important to consider the efects of using nextLine() after any neXXXt() elememt
+    @Test
+    public void testLargestNumberAtLeastTwiceofOthers_LC747() {
         
-        System.out.println("Sum of al given values is " + sum);
+        Assert.assertEquals(1, new LargestNumberAtLeastTwiceofOthers_LC747().dominantIndex(new int[] {3, 6, 1, 0}));
+        
+        Assert.assertEquals(-1, new LargestNumberAtLeastTwiceofOthers_LC747().dominantIndex(new int[] {1, 2, 3, 4}));
+        
+        Assert.assertEquals(3, new LargestNumberAtLeastTwiceofOthers_LC747().dominantIndex(new int[] {0, 0, 0, 1}));
+        
     }
     
 }
