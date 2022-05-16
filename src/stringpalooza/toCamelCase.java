@@ -40,10 +40,17 @@ public class toCamelCase {
         objectClass.testUpperAfterDash();
     }
     
+    /**
+     * A method to generate a camelCase
+     * @param s the String to convert to camelCase
+     * @return String with the built camelCase
+     */
     static String toCamelCase(String s) {
         StringBuilder result = new StringBuilder();
         for(int i = 0; i < s.length(); i++) {
             Character eval = s.charAt(i);
+            // Every chat is checked with compliance with 3 possible results -1, 0 and 1
+            // as stated on compliesCamelRule()
             if(compliesCamelRule(eval.toString(), i) == 1) {
                 result.append(eval.toString().toUpperCase());
             } else if(compliesCamelRule(eval.toString(), i) == -1 && (i + 1) != s.length()) {
@@ -66,7 +73,6 @@ public class toCamelCase {
         int response = 0;
         Pattern IS_LOWERATOZ = Pattern.compile("[a-z]");
         Matcher matcher = IS_LOWERATOZ.matcher(s);
-        //Character c = s.charAt(pos);
         if(isScore(s)) {
             return -1;
         } else if(matcher.find() || pos == 0) {
@@ -77,7 +83,7 @@ public class toCamelCase {
     }
     
     /**
-     * 
+     * Method to check against score or underscore
      * @param s
      * @return true if String has a score(or underscore)
      */

@@ -22,7 +22,6 @@
  * THE SOFTWARE.
  */
 package stringpalooza;
-
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -30,23 +29,29 @@ import org.junit.Test;
  * This class if for testing purposes with JUnit
  * @author Ali Adame
  */
-public class toCamelCaseSolution {
+public class readATMpin4to6Solution {
     @Test
-    public void testSomeUnderscoreLowerStart() {
-        String input = "the_Stealth_Warrior";
+    public void a3DigitString() {
+        String input = "123";
         System.out.println("input: "+input);
-        assertEquals("theStealthWarrior", toCamelCase.toCamelCase(input));
+        assertEquals(false, readATMpin4to6.validatePin2(input));
     }
     @Test
-    public void testSomeDashLowerStart() {
-        String input = "the-Stealth-Warrior";
+    public void a5DigitString() {
+        String input = "12345";
         System.out.println("input: "+input);
-        assertEquals("theStealthWarrior", toCamelCase.toCamelCase(input));
+        assertEquals(false, readATMpin4to6.validatePin2(input));
     }
     @Test
-    public void testUpperAfterDash() {
-        String input = "You_have_chosen_to_translate_this_kata_For_your_convenience_we_have_provided_the_existing_test_cases_used_for_the_language_that_you_have_already_completed_as_well_as_all_of_the_other_related_fields";
+    public void a6DigitString() {
+        String input = "123456";
         System.out.println("input: "+input);
-        assertEquals("YouHaveChosenToTranslateThisKataForYourConvenienceWeHaveProvidedTheExistingTestCasesUsedForTheLanguageThatYouHaveAlreadyCompletedAsWellAsAllOfTheOtherRelatedFields", toCamelCase.toCamelCase(input));
+        assertEquals(true, readATMpin4to6.validatePin2(input));
+    }
+    @Test
+    public void aNotOnlyDigitString() {
+        String input = "1234gb";
+        System.out.println("input: "+input);
+        assertEquals(false, readATMpin4to6.validatePin2(input));
     }
 }
